@@ -1,0 +1,76 @@
+{
+  "name": "opencode-session-guardian",
+  "version": "0.2.0",
+  "description": "Deterministic, lossless compaction and session integrity guardian for OpenCode V1 and V2",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./server": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE",
+    "index.ts"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test --experimental-strip-types test/*.test.ts",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silveroxides/opencode-session-guardian.git"
+  },
+  "bugs": {
+    "url": "https://github.com/silveroxides/opencode-session-guardian/issues"
+  },
+  "homepage": "https://github.com/silveroxides/opencode-session-guardian#readme",
+  "author": "Silver <https://github.com/silveroxides>",
+  "license": "MIT",
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "plugin",
+    "compaction",
+    "deterministic",
+    "session-guardian",
+    "sqlite",
+    "context-window"
+  ],
+  "dependencies": {
+    "zod": "^3.24.2"
+  },
+  "peerDependencies": {
+    "@opencode/plugin": ">=2.0.0",
+    "@opencode-ai/plugin": ">=1.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@opencode/plugin": {
+      "optional": true
+    },
+    "@opencode-ai/plugin": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@opencode-ai/plugin": "^1.19.6",
+    "@opencode/plugin": "^2.3.2",
+    "@types/node": "^22.13.0",
+    "tsup": "^8.3.6",
+    "typescript": "^5.7.3"
+  }
+}
